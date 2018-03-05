@@ -4,10 +4,10 @@ from simplecrypt import encrypt, decrypt
 
 class Converter():
     def __init__(self, password):
-        self.password = password
+        self.__password = password
 
     def encrypt(self, plain_text):
-        return encrypt(self.password, b64encode(plain_text[::-1]))
+        return encrypt(self.__password, b64encode(plain_text[::-1]))
 
     @staticmethod
     def decrypt(cyfred_text, password):
